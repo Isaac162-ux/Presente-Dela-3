@@ -1,13 +1,12 @@
 // ===========================
-// CONFIGURAÇÃO PERSONALIZÁVEL
+// CONFIGURAÇÃO 
 // ===========================
 const CONFIG = {
-    // SEUS NOMES - EDITE AQUI!
+    // NOMES - 
     seuNome: "Isaac",
     nomeAmado: "Carol",
 
-    // SUAS FOTOS - EDITE AQUI COM SEUS LINKS!
-    // Dica do G: Substitua os nomes de arquivos locais por links (ex: Imgur, Postimages) para funcionar online!
+    // FOTOS 
     fotos: [
         "fotos.vd/14.jpeg",
         "fotos.vd/11.mp4",
@@ -28,7 +27,7 @@ const CONFIG = {
         
     ],
 
-    // LINK DA MÚSICA - EDITE AQUI!
+    // LINK DA MÚSICA 
     musicaUrl: "aduiomp3/foi assim (online-audio-converter.com).mp3",
 };
 
@@ -48,7 +47,7 @@ function atualizarNomes() {
 }
 
 // ===========================
-// 100 MOTIVOS - EDITE AQUI!
+// 100 MOTIVOS
 // ===========================
 const cent_motivos = [
   "Seu sorriso perfeito",
@@ -207,7 +206,7 @@ function inicializarAbas() {
 }
 
 // ===========================
-// GALERIA DE FOTOS (CORRIGIDA)
+// GALERIA DE FOTOS 
 // ===========================
 let currentPhotoIndex = 0;
 
@@ -444,7 +443,7 @@ function scrollParaAba(tabId) {
 }
 
 // ===========================
-// HAMBÚRGUER MENU MELHORADO
+// HAMBÚRGUER MENU 
 // ===========================
 function inicializarHamburger() {
     const hamburger = document.querySelector('.hamburger');
