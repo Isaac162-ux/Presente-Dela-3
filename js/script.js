@@ -29,7 +29,7 @@ const CONFIG = {
     ],
 
     // LINK DA MÚSICA - EDITE AQUI!
-    musicaUrl: ".host=mp3/foi assim (online-audio-converter.com).mp3",
+    musicaUrl: "aduiomp3/foi assim (online-audio-converter.com).mp3",
 };
 
 // ===========================
