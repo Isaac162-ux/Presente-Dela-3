@@ -185,6 +185,7 @@ if (darkModeBtn) {
 function inicializarAbas() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
+    const navTabs = document.querySelector('.nav-tabs');
 
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -196,6 +197,11 @@ function inicializarAbas() {
             btn.classList.add('active');
             const targetTab = document.getElementById(tabId);
             if (targetTab) targetTab.classList.add('active');
+
+            // Fechar o menu mobile ao clicar numa aba
+            if (navTabs && window.innerWidth <= 768) {
+                navTabs.classList.remove('active');
+            }
         });
     });
 }
@@ -438,7 +444,7 @@ function scrollParaAba(tabId) {
 }
 
 // ===========================
-// HAMBÚRGUER MENU
+// HAMBÚRGUER MENU MELHORADO
 // ===========================
 function inicializarHamburger() {
     const hamburger = document.querySelector('.hamburger');
@@ -447,7 +453,21 @@ function inicializarHamburger() {
     if (hamburger && navTabs) {
         hamburger.addEventListener('click', (e) => {
             e.preventDefault();
-            navTabs.style.display = navTabs.style.display === 'flex' ? 'none' : 'flex';
+            navTabs.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar') && navTabs.classList.contains('active')) {
+                navTabs.classList.remove('active');
+            }
+        });
+
+        // Fechar menu ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navTabs.classList.remove('active');
+            }
         });
     }
 }
