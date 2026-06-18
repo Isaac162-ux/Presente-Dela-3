@@ -78,6 +78,7 @@ body.dark-mode {
     font-size: 1rem;
     font-weight: 500;
     position: relative;
+    border-radius: 8px; /* Adicionado para melhor visual no menu */
 }
 
 .tab-btn:hover {
@@ -174,7 +175,7 @@ body.dark-mode {
     height: 100%;
     top: 0;
     left: 0;
-    pointer-events: none; /* Impede que pegue cliques por acidente */
+    pointer-events: none;
 }
 
 .heart {
@@ -252,7 +253,7 @@ body.dark-mode {
     50% { transform: scale(1.2); }
 }
 
-/* Galeria Section (Suporte a vídeos adicionado) */
+/* Galeria Section */
 .galeria-section {
     padding: 5rem 2rem;
     background-color: var(--light-bg);
@@ -289,7 +290,7 @@ body.dark-mode .galeria-section {
     box-shadow: var(--shadow);
     cursor: pointer;
     transition: all 0.3s;
-    height: 300px; /* Força um tamanho consistente na grid */
+    height: 300px;
 }
 
 .galeria-item:hover {
@@ -297,7 +298,6 @@ body.dark-mode .galeria-section {
     box-shadow: 0 15px 40px rgba(255, 23, 68, 0.3);
 }
 
-/* Aplica tanto para imagens quanto para os vídeos do whats */
 .galeria-img {
     width: 100%;
     height: 100%;
@@ -321,14 +321,14 @@ body.dark-mode .galeria-section {
     transform: translateY(0);
     transition: transform 0.3s;
     font-weight: bold;
-    z-index: 2; /* Garante que fica acima do vídeo */
+    z-index: 2;
 }
 
 .galeria-item:hover .foto-label {
     transform: translateY(-5px);
 }
 
-/* Modal Inteligente (Ajustado para mídias dinâmicas) */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -346,7 +346,6 @@ body.dark-mode .galeria-section {
     justify-content: center;
 }
 
-/* Estiliza o elemento img ou video id="modal-img-display" gerado pelo JS */
 #modal-img-display {
     width: auto;
     max-width: 90%;
@@ -531,7 +530,7 @@ body.dark-mode .mensagem-section {
     font-weight: bold;
 }
 
-/* Timeline Section */
+/* Timeline */
 .timeline-section {
     margin-top: 3rem;
 }
@@ -614,7 +613,7 @@ body.dark-mode .timeline-content {
     line-height: 1.6;
 }
 
-/* Música Section */
+/* Música */
 .musica-section {
     padding: 5rem 2rem;
     background: linear-gradient(135deg, #eb05eb 0%, #061ce6 100%);
@@ -686,7 +685,7 @@ body.dark-mode .timeline-content {
     margin-top: 1rem;
 }
 
-/* Carrossel Infinito Corrigido */
+/* Carrossel */
 .carrossel-section {
     margin-top: 3rem;
     width: 100%;
@@ -718,7 +717,7 @@ body.dark-mode .timeline-content {
     width: 100%;
     height: 450px;
     object-fit: cover;
-    flex-shrink: 0; /* Impede que as imagens encolham */
+    flex-shrink: 0;
 }
 
 /* Footer */
@@ -754,415 +753,105 @@ body.dark-mode .timeline-content {
     transform: scale(1.03);
 }
 
-/* Responsividade Melhorada */
+/* Responsividade */
 @media (max-width: 1024px) {
-    .nav-container {
-        gap: 1rem;
-    }
-
-    .nav-logo {
-        font-size: 1.3rem;
-    }
-
-    .tab-btn {
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-    }
+    .nav-container { gap: 1rem; }
+    .nav-logo { font-size: 1.3rem; }
+    .tab-btn { padding: 0.8rem 1rem; font-size: 0.95rem; }
 }
 
 @media (max-width: 768px) {
-    .nav-container {
-        padding: 0 15px;
-        gap: 1rem;
-    }
-
-    .nav-logo {
-        font-size: 1.2rem;
-    }
-
+    .nav-container { padding: 0 15px; gap: 1rem; }
+    .nav-logo { font-size: 1.2rem; }
     .nav-tabs {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
+        position: absolute; top: 70px; left: 0; right: 0;
         flex-direction: column;
         background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        gap: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        max-height: 0;
-        overflow: hidden;
+        gap: 0; border-top: 1px solid rgba(255, 255, 255, 0.2);
+        max-height: 0; overflow: hidden;
         transition: max-height 0.3s ease-in-out;
     }
-
-    .nav-tabs.active {
-        max-height: 400px;
-    }
-
-    .tab-btn {
-        width: 100%;
-        padding: 1rem;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        border: none;
-        font-size: 0.95rem;
-    }
-
-    .tab-btn.active {
-        background: rgba(255, 255, 255, 0.15);
-        border-bottom: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-        margin: 1.5rem auto;
-        max-width: 95%;
-    }
-
-    .names-display {
-        flex-direction: column;
-        gap: 0.5rem;
-        font-size: 1.2rem;
-        margin: 1.5rem 0;
-    }
-
-    .name-left, .name-right {
-        font-size: 1.4rem;
-    }
-
-    .heart-center {
-        font-size: 2rem;
-    }
-
-    .galeria-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .galeria-container {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-    
-    .galeria-item {
-        height: 180px;
-    }
-
-    .foto-label {
-        padding: 1rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    #modal-img-display {
-        max-width: 95%;
-        max-height: 70vh;
-    }
-    
-    .close-modal {
-        right: 15px;
-        font-size: 30px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .modal-nav {
-        bottom: 20px;
-        gap: 1rem;
-    }
-
-    .modal-prev, .modal-next {
-        padding: 0.8rem 1rem;
-        font-size: 1.2rem;
-    }
-
-    .motivos-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .motivos-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-
-    .motivo-card {
-        padding: 1rem;
-    }
-
-    .motivo-texto {
-        font-size: 0.85rem;
-    }
-
-    .reveal-btn {
-        padding: 0.8rem 2rem;
-        font-size: 0.95rem;
-    }
-
-    .mensagem-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .mensagem-box {
-        max-width: 95%;
-        padding: 2rem 1.5rem;
-        margin: 0 auto 2rem;
-    }
-
-    .mensagem-texto {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .timeline-section h3 {
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
-    }
-
-    .timeline::before {
-        left: 20px;
-    }
-
+    .nav-tabs.active { max-height: 400px; }
+    .tab-btn { width: 100%; padding: 1rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); border: none; font-size: 0.95rem; }
+    .tab-btn.active { background: rgba(255, 255, 255, 0.15); border-bottom: none; }
+    .hamburger { display: flex; }
+    .hero-title { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .hero-subtitle { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .hero-description { font-size: 1rem; margin: 1.5rem auto; max-width: 95%; }
+    .names-display { flex-direction: column; gap: 0.5rem; font-size: 1.2rem; margin: 1.5rem 0; }
+    .name-left, .name-right { font-size: 1.4rem; }
+    .heart-center { font-size: 2rem; }
+    .galeria-section h2 { font-size: 2rem; margin-bottom: 2rem; }
+    .galeria-container { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; padding: 0 1rem; }
+    .galeria-item { height: 180px; }
+    .foto-label { padding: 1rem 0.8rem; font-size: 0.8rem; }
+    #modal-img-display { max-width: 95%; max-height: 70vh; }
+    .close-modal { right: 15px; font-size: 30px; width: 40px; height: 40px; }
+    .modal-nav { bottom: 20px; gap: 1rem; }
+    .modal-prev, .modal-next { padding: 0.8rem 1rem; font-size: 1.2rem; }
+    .motivos-section h2 { font-size: 2rem; margin-bottom: 2rem; }
+    .motivos-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 0 1rem; }
+    .motivo-card { padding: 1rem; }
+    .motivo-texto { font-size: 0.85rem; }
+    .reveal-btn { padding: 0.8rem 2rem; font-size: 0.95rem; }
+    .mensagem-section h2 { font-size: 2rem; margin-bottom: 2rem; }
+    .mensagem-box { max-width: 95%; padding: 2rem 1.5rem; margin: 0 auto 2rem; }
+    .mensagem-texto { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .timeline-section h3 { font-size: 1.6rem; margin-bottom: 2rem; }
+    .timeline::before { left: 20px; }
     .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        width: calc(100% - 50px);
-        text-align: left;
-        margin-left: 50px !important;
-        margin-right: 0 !important;
-    }
-
-    .timeline-marker {
-        left: 20px;
-    }
-
-    .timeline-content {
-        padding: 1rem;
-    }
-
-    .timeline-content h4 {
-        font-size: 1.1rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .timeline-content p {
-        font-size: 0.85rem;
-    }
-
-    .musica-section {
-        padding: 3rem 2rem;
-    }
-
-    .musica-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .musica-foto {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 1.5rem;
-    }
-
-    .player-box {
-        padding: 2rem 1.5rem;
-    }
-
-    .music-icon {
-        font-size: 3rem;
-    }
-
-    .play-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .carrossel-section h3 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .carrossel-img {
-        height: 280px;
-    }
+    .timeline-item:nth-child(even) .timeline-content { width: calc(100% - 50px); text-align: left; margin-left: 50px !important; margin-right: 0 !important; }
+    .timeline-marker { left: 20px; }
+    .timeline-content { padding: 1rem; }
+    .timeline-content h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .timeline-content p { font-size: 0.85rem; }
+    .musica-section { padding: 3rem 2rem; }
+    .musica-section h2 { font-size: 2rem; margin-bottom: 2rem; }
+    .musica-foto { width: 250px; height: 250px; margin-bottom: 1.5rem; }
+    .player-box { padding: 2rem 1.5rem; }
+    .music-icon { font-size: 3rem; }
+    .play-btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+    .carrossel-section h3 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+    .carrossel-img { height: 280px; }
 }
 
 @media (max-width: 480px) {
-    .nav-container {
-        padding: 0 10px;
-        gap: 0.5rem;
-    }
-
-    .nav-logo {
-        font-size: 1rem;
-    }
-
-    .dark-mode-btn {
-        min-width: 40px;
-        padding: 0.4rem 0.6rem;
-        font-size: 0.9rem;
-    }
-
-    .hamburger span {
-        width: 20px;
-        height: 2.5px;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-description {
-        font-size: 0.9rem;
-        margin: 1rem auto;
-    }
-
-    .names-display {
-        font-size: 1rem;
-        gap: 0.3rem;
-        margin: 1rem 0;
-    }
-
-    .name-left, .name-right {
-        font-size: 1.1rem;
-    }
-
-    .heart-center {
-        font-size: 1.5rem;
-    }
-
-    .galeria-container {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 0.8rem;
-        padding: 0 0.8rem;
-    }
-    
-    .galeria-item {
-        height: 140px;
-    }
-
-    .foto-label {
-        padding: 0.8rem 0.5rem;
-        font-size: 0.7rem;
-    }
-
-    .motivos-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-        padding: 0 0.8rem;
-    }
-
-    .motivo-card {
-        padding: 0.8rem;
-    }
-
-    .motivo-texto {
-        font-size: 0.8rem;
-    }
-
-    .motivo-numero {
-        font-size: 1.2rem;
-    }
-
-    .mensagem-box {
-        padding: 1.5rem 1rem;
-    }
-
-    .mensagem-texto {
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
-    }
-
-    .mensagem-assinado,
-    .mensagem-nome {
-        font-size: 0.9rem;
-    }
-
-    .timeline-content {
-        padding: 0.8rem;
-    }
-
-    .timeline-content h4 {
-        font-size: 1rem;
-    }
-
-    .timeline-content p {
-        font-size: 0.8rem;
-    }
-
-    .musica-foto {
-        width: 200px;
-        height: 200px;
-    }
-
-    .player-box {
-        padding: 1.5rem 1rem;
-    }
-
-    .music-icon {
-        font-size: 2.5rem;
-    }
-
-    .play-btn {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    .musica-titulo {
-        font-size: 0.95rem;
-    }
-
-    .carrossel-img {
-        height: 200px;
-    }
-
-    .footer {
-        padding: 1.5rem 1rem;
-    }
-
-    .footer p {
-        font-size: 0.9rem;
-    }
+    .nav-container { padding: 0 10px; gap: 0.5rem; }
+    .nav-logo { font-size: 1rem; }
+    .dark-mode-btn { min-width: 40px; padding: 0.4rem 0.6rem; font-size: 0.9rem; }
+    .hamburger span { width: 20px; height: 2.5px; }
+    .hero-title { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: 1rem; }
+    .hero-description { font-size: 0.9rem; margin: 1rem auto; }
+    .names-display { font-size: 1rem; gap: 0.3rem; margin: 1rem 0; }
+    .name-left, .name-right { font-size: 1.1rem; }
+    .heart-center { font-size: 1.5rem; }
+    .galeria-container { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.8rem; padding: 0 0.8rem; }
+    .galeria-item { height: 140px; }
+    .foto-label { padding: 0.8rem 0.5rem; font-size: 0.7rem; }
+    .motivos-grid { grid-template-columns: 1fr; gap: 0.8rem; padding: 0 0.8rem; }
+    .motivo-card { padding: 0.8rem; }
+    .motivo-texto { font-size: 0.8rem; }
+    .motivo-numero { font-size: 1.2rem; }
+    .mensagem-box { padding: 1.5rem 1rem; }
+    .mensagem-texto { font-size: 0.95rem; margin-bottom: 1rem; }
+    .mensagem-assinado, .mensagem-nome { font-size: 0.9rem; }
+    .timeline-content { padding: 0.8rem; }
+    .timeline-content h4 { font-size: 1rem; }
+    .timeline-content p { font-size: 0.8rem; }
+    .musica-foto { width: 200px; height: 200px; }
+    .player-box { padding: 1.5rem 1rem; }
+    .music-icon { font-size: 2.5rem; }
+    .play-btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+    .musica-titulo { font-size: 0.95rem; }
+    .carrossel-img { height: 200px; }
+    .footer { padding: 1.5rem 1rem; }
+    .footer p { font-size: 0.9rem; }
 }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--light-bg);
-}
-
-body.dark-mode ::-webkit-scrollbar-track {
-    background: var(--dark-bg);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color);
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--light-bg); }
+body.dark-mode ::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
